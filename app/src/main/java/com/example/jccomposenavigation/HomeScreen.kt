@@ -1,0 +1,45 @@
+package com.example.jccomposenavigation
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+
+@Composable
+fun HomeScreen(
+    navController: NavHostController
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+
+        Text(text = "Home Screen", fontSize = 20.sp)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = {
+
+            // Traditional way to navigate
+            // navController.navigate("second")
+
+//            navController.navigate(Screen.Second.rout + "/www.url.com/44")
+//            navController.navigate(
+//                Screen.Second.rout+"/www.url.com/44"
+//            )
+            navController.navigate(Screen.Second.rout+"/www.url.com/44")
+        }) {
+            Text(text = "Go to second")
+        }
+    }
+}
